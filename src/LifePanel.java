@@ -77,10 +77,7 @@ public class LifePanel extends JPanel implements KeyListener, MouseMotionListene
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        int x = e.getX() / Constants.ENTITY_SIZE_PX;
-        int y = e.getY() / Constants.ENTITY_SIZE_PX;
-        this.world.getLife()[x][y] = this.addMode;
-        this.repaint();
+        action(e);
     }
 
     @Override
@@ -95,10 +92,7 @@ public class LifePanel extends JPanel implements KeyListener, MouseMotionListene
 
     @Override
     public void mousePressed(MouseEvent e) {
-        int x = e.getX() / Constants.ENTITY_SIZE_PX;
-        int y = e.getY() / Constants.ENTITY_SIZE_PX;
-        this.world.getLife()[x][y] = this.addMode;
-        this.repaint();
+        action(e);
     }
 
     @Override
@@ -114,5 +108,14 @@ public class LifePanel extends JPanel implements KeyListener, MouseMotionListene
     @Override
     public void mouseExited(MouseEvent e) {
 
+    }
+
+    public void action(MouseEvent e) {
+        int x = e.getX() / Constants.ENTITY_SIZE_PX;
+        int y = e.getY() / Constants.ENTITY_SIZE_PX;
+        try {
+            this.world.getLife()[x][y] = this.addMode;
+            this.repaint();
+        }catch (ArrayIndexOutOfBoundsException  ex) {}
     }
 }
