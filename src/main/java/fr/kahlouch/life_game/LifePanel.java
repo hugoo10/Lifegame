@@ -1,3 +1,5 @@
+package fr.kahlouch.life_game;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;

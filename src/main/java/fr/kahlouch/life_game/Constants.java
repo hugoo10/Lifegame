@@ -1,3 +1,5 @@
+package fr.kahlouch.life_game;
+
 import java.awt.*;
 
 public class Constants {

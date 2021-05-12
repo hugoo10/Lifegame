@@ -1,3 +1,5 @@
+package fr.kahlouch.life_game;
+
 public class World {
     private boolean[][] life;
     private int generation;
@@ -39,7 +41,7 @@ public class World {
         try {
             return this.life[x][y];
         } catch (IndexOutOfBoundsException ex) {
-            return false;
+            return true;
         }
     }
 
